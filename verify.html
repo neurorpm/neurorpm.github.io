@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Opening NeuroRPM...</title>
+    <script>
+      window.onload = function() {
+        var url = new URL(window.location.href);
+        var code = url.searchParams.get("code");
+        if (code) {
+          window.location.href = "neurorpm://verify?code=" + code;
+
+          // Fallback to App Store if app not installed
+          setTimeout(function() {
+            window.location.href = "https://apps.apple.com/app/YOUR_APP_ID";
+          }, 2000);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>Opening NeuroRPM...</p>
+  </body>
+</html>
